@@ -33,8 +33,27 @@ fun Login(modifier: Modifier) {
         ImageSintia(Modifier.align(Alignment.CenterHorizontally))
         Spacer(modifier = Modifier.padding(5.dp))
         EmailField()
-        Spacer(modifier = Modifier.padding(15.dp))
+        Spacer(modifier = Modifier.padding(5.dp))
+        PasswordField()
     }
+}
+
+@Composable
+fun PasswordField() {
+    TextField(
+        value = "", onValueChange = {},
+        placeholder = { Text(text = "Contraseña")},
+        modifier = Modifier.fillMaxWidth(),
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+        singleLine = true,
+        maxLines = 1,
+        colors = TextFieldDefaults.textFieldColors(
+            textColor = Color(0xff636262),
+            backgroundColor = Color(0xffdedddd),
+            focusedIndicatorColor = Color.Transparent,
+            unfocusedIndicatorColor = Color.Transparent
+        )
+    )
 }
 
 @Preview(showBackground = true, showSystemUi = true)
